@@ -1,0 +1,7 @@
+# Fill missing values (e.g., with median for numerical, mode for categorical)
+data['SquareFeet'] = data['SquareFeet'].fillna(data['SquareFeet'].median())
+data['Bedrooms'] = data['Bedrooms'].fillna(data['Bedrooms'].mode()[0])
+# ... for other columns
+
+# Drop rows with too many missing values
+data = data.dropna(thresh=data.shape[1] - 2)
