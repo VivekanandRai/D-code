@@ -1,0 +1,12 @@
+# Correlation matrix
+correlation_matrix = data.corr()
+sns.heatmap(correlation_matrix, annot=True)
+plt.show()
+
+# Scatter plots between features and the target variable
+plt.scatter(data['SquareFeet'], data['Price'])
+plt.xlabel('Square Feet')
+plt.ylabel('Price')
+plt.show()
+
+# ... other visualizations
