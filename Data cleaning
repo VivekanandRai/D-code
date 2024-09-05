@@ -5,3 +5,11 @@ data['Bedrooms'] = data['Bedrooms'].fillna(data['Bedrooms'].mode()[0])
 
 # Drop rows with too many missing values
 data = data.dropna(thresh=data.shape[1] - 2)
+# Identify outliers using box plots or statistical methods
+# Remove or cap outliers if necessary
+# Convert categorical variables to numerical using one-hot encoding or label encoding
+data = pd.get_dummies(data, columns=['Location'])
+from sklearn.preprocessing import StandardScaler
+
+scaler = StandardScaler()
+data[['SquareFeet', 'YearBuilt', 'LotSize']] = scaler.fit_transform(data[['SquareFeet', 'YearBuilt', 'LotSize']])
